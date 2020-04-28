@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Text Counter</string>
+    <string name="btn_calculate_caption">Calculate</string>
+    <string name="calculate">Calculate</string>
+    <string-array name="CounterOptions">
+        <item>Words</item>
+        <item>Chars</item>
+    </string-array>
+</resources>
