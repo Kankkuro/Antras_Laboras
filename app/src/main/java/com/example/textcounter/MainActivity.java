@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -29,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnCalculateOnClick(View view) {
+        EditText edUserInput = findViewById(R.id.edUserInput);
         String selection = this.ddSelection.getSelectedItem().toString();
+        if (selection.equalsIgnoreCase())
         Toast.makeText(this, selection, Toast.LENGTH_LONG).show();
     }
 }
