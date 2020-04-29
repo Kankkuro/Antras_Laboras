@@ -7,9 +7,12 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import static com.example.textcounter.utils.ElementsCalculator.getCharsCount;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,8 +34,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnCalculateOnClick(View view) {
         EditText edUserInput = findViewById(R.id.edUserInput);
+        TextView tvOutput = findViewById(R.id.tvOutput);
         String selection = this.ddSelection.getSelectedItem().toString();
-        if (selection.equalsIgnoreCase())
-        Toast.makeText(this, selection, Toast.LENGTH_LONG).show();
+        String userInputText = edUserInput.getText().toString();
+        if (selection.equalsIgnoreCase("Chars")){
+            int count = getCharsCount(userInputText);
+            tvOutput.setText(String.valueOf(count));
+            Toast.makeText(this, userInputText, Toast.LENGTH_LONG).show();
+        }
+
     }
 }
